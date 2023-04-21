@@ -4,7 +4,6 @@ class CreateCategories < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.integer :photos_count, default: 0
-      t.text :comment
 
       t.timestamps
     end
