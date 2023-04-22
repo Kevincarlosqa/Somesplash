@@ -14,6 +14,7 @@ wallpaper = Category.create(
             name: "Wallpapers",
             description: "From epic drone shots to inspiring moments in nature, find free HD wallpapers worthy of your screens."
             )
+wallpaper.cover.attach(io: File.open('db/images/cover/wallpaper.png'), filename: 'wallpaper.png')
 nature = Category.create(
             name: "Nature",
             description: "Let's celebrate the magic of Mother Earth - with images of everything our planet has to offer."
@@ -45,7 +46,7 @@ squirrel = Photo.create(title: "Squirrel", description: "Nice and big purple lak
 universe = Photo.create(title: "Universe", description: "Nice and big purple lake.", category: nature)
 
 desert_sunset = Photo.create(title: "Desert Sunset", description: "Nice and big purple lake.", category: wallpaper)
-osean_sunset = Photo.create(title: "Ocean Sunset", description: "Nice and big purple lake.", category: wallpaper)
+ocean_sunset = Photo.create(title: "Ocean Sunset", description: "Nice and big purple lake.", category: wallpaper)
 city_sunset = Photo.create(title: "City Sunset", description: "Nice and big purple lake.", category: wallpaper)
 
 people1 = Photo.create(title: "People 1", description: "Nice and big purple lake.", category: people)
