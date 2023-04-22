@@ -6,7 +6,9 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = Category.find(params[:id])
+    @photos = @categories.photos
   end
+
   # GET /categories/new -> Solo vista, cuando se envia el formulario redirecciona a create
   def new
     @categories = Category.new

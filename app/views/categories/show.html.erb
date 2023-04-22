@@ -1,3 +1,19 @@
 <h1><%= @categories.name %></h1>
 <p><%= @categories.description %></p>
 
+<h2>Photos</h2>
+<% @photos.each do |photo|%>
+<div>
+<% if photo.image.attached?%>
+  <div>
+    <%= image_tag photo.image%>
+  </div>
+  <%end%>
+  </div>
+  <span>
+  <%= photo.title%>
+  </span>
+  <span>
+  <%= photo.description%>
+  </span>
+<%end%>
