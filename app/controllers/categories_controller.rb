@@ -8,6 +8,10 @@ class CategoriesController < ApplicationController
     @categories = Category.find(params[:id])
     @photos = @categories.photos
   end
+  def search
+    binding.pry
+    #sdq
+  end
 
   # GET /categories/new -> Solo vista, cuando se envia el formulario redirecciona a create
   def new

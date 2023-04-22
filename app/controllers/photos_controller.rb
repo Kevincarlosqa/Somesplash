@@ -1,7 +1,13 @@
 class PhotosController < ApplicationController
+
+  # GET /photos/new?department_id=21
   def new
     @photo = Photo.new
     @category = Category.find(params[:category_id])
+  end
+
+  def show
+    @photo = Photo.find(params[:id])
   end
 
   def create
@@ -13,6 +19,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  # GET /search?query=
+  def search
+    query = params[:query].downcase
+    @photos = Photo.where("LOWER(title) LIKE ?", "%#{query}%")
+  end
+
   def edit
   end
 
@@ -22,9 +34,7 @@ class PhotosController < ApplicationController
   def destroy
   end
 
-  def show
-    @photo = Photo.find(params[:id])
-  end
+  
 
   private
 

@@ -19,6 +19,17 @@
   </span>
   <%end%>
 </div>
+
+<div>
+  <%= form.label :cover %>
+  <%= form.file_field :cover, accept: 'image/png,image/jpeg'%>
+  <% category.errors.full_messages_for(:cover).each do |message|%>
+  <span>
+  <%= message%>
+  </span>
+  <%end%>
+</div>
+
   
   <div>
   <%= form.submit %>
