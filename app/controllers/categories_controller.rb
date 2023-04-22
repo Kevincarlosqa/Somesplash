@@ -12,6 +12,11 @@ class CategoriesController < ApplicationController
     @categories = Category.new
   end
 
+  # GET deparments/:id/edit
+  def edit
+    @categories = Category.find(params[:id])
+  end
+
   # POST /categories
   def create
     @categories = Category.new(categories_params)
@@ -25,10 +30,17 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
+  # PATCH categories/:id
   def update
+    @categories = Category.find(params[:id])
+    # binding.pry
+    if @categories.update(categories_params)
+      # redirect_to "/categories/#{@categories.id}"
+      redirect_to category_path(@categories)
+      # redirect_to @categories
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
