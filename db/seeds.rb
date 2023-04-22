@@ -19,22 +19,27 @@ nature = Category.create(
             name: "Nature",
             description: "Let's celebrate the magic of Mother Earth - with images of everything our planet has to offer."
             )
+nature.cover.attach(io: File.open('db/images/cover/nature.png'), filename: 'nature.png')
 people = Category.create(
             name: "People",
             description: "Real people, captured. Photography has the power to reflect the world around us, give voice to individuals and groups."
             )
+people.cover.attach(io: File.open('db/images/cover/people.png'), filename: 'people.png')
 food = Category.create(
             name: "Food",
             description: "Let's celebrate the magic of Mother Earth - with images of everything our planet has to offer."
             )
+food.cover.attach(io: File.open('db/images/cover/food.png'), filename: 'food.png')
 technology = Category.create(
             name: "Technology",
             description: "Let's celebrate the magic of Mother Earth - with images of everything our planet has to offer."
             )
+technology.cover.attach(io: File.open('db/images/cover/technology.png'), filename: 'technology.png')
 animals = Category.create(
               name: "Animals",
               description: "Let's celebrate the magic of Mother Earth - with images of everything our planet has to offer."
               )
+animals.cover.attach(io: File.open('db/images/cover/animal.png'), filename: 'animal.png')
 
 puts "Seeding Photos"
 
