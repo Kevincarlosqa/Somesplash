@@ -20,3 +20,11 @@
     turbo_confirm: "Are you Sure?"}%>
   </div>
 
+<%= form_for(Comment.new, url: comments_create_path, method: "get") do |form| %>
+
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+  <%= form.hidden_field :commentable_type, value: @photo.class.to_s %>
+  <%= form.hidden_field :commentable_id, value: @photo.id %>
+  <%= form.submit "Create comment" %>
+<% end %>

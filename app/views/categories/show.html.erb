@@ -18,6 +18,8 @@
   <p>
   <%= photo.description%>
   </p>
+
+
   <div>
     <%= link_to "edit", edit_photo_path(photo)%>
     <%= link_to "destroy", photo_path(photo), data: {
@@ -26,3 +28,12 @@
   </div>
 
 <%end%>
+
+<%= form_for(Comment.new, url: comments_create_path, method: "get") do |form| %>
+
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+  <%= form.hidden_field :commentable_type, value: @categories.class.to_s %>
+  <%= form.hidden_field :commentable_id, value: @categories.id %>
+  <%= form.submit "Create comment" %>
+<% end %>
